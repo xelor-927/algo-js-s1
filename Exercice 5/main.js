@@ -1,3 +1,5 @@
+
+
 let a = "Jean"
 let b = "Paul"
 
@@ -51,17 +53,57 @@ let history = user.firstname + user.lastname + " a " + user.age + "  et aime le 
 console.log (history)
 
 
+
+
+
 //////////////
 
 
 
 
 
+class Pokemon{
+    constructor(name,def , atk,pv ){
+        this.name = name
+        this.def = def
+        this.atk = atk
+        this.pv = pv
+        this.luck = luck
 
+    }
 
+    isLucky () {
+        if (Math.random()<=this.luck) {
+        return true 
+        else
+        return false
+        }
+    
 
+    attackPokemon(Pokemon){
+        let damage=this.atk - Pokemon.def
+        Pokemon.pv -= damage 
+        console.log(this.name + " a attaque " + Pokemon.name + ", il lui reste " + Pokemon.pv )
+    }
+}
 
+let bulbizar = new Pokemon(" bulbizar", 15, 30, 120)
 
+let salameche = new Pokemon(" salameche", 28, 22, 100)
+
+bulbizar.attackPokemon(salameche)
+console.log(salameche.pv)
+
+while(bulbizar.pv>0 && salameche.pv >0){
+    bulbizar.attackPokemon(salameche)
+
+if (salameche.pv<=0) {
+console.log(salameche.name + " est mort")
+break
+}
+
+bulbizar
+}
 
 
 
