@@ -73,10 +73,12 @@ class Pokemon{
     }
 
     isLucky () {
-        if (Math.random()<=this.luck) {
-        return true 
-        else
-        return false
+        if (Math.random()<=this.luck){
+            return true 
+        } else {
+            return false
+        }
+            
         }
     
 
